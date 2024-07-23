@@ -10,89 +10,84 @@ interface StylesProps {
 interface StyleSheetType {
     safeAreaViewStyle: ViewStyle;
     ViewContainerStyle: ViewStyle;
-    ViewCardStyle: ViewStyle;
-    ImageViewStyle: ViewStyle;
-    ViewInfoCardStyle: ViewStyle;
-    TextDateStyle: TextStyle;
-    TextNameStyle: TextStyle;
-    TextTagStyleView: ViewStyle;
-    TextTagStyle: TextStyle;
-    seperation: ViewStyle;
+    ImageCardView: ViewStyle;
+    CardInfoView: ViewStyle;
+    CardTtitle: TextStyle;
+    CardMedicamentNameContainer: ViewStyle;
+    CardMedicamentName: TextStyle;
+    CardMedicamentNameView: ViewStyle
+    ExperiationDateContainer: ViewStyle;
+
 }
 
 type StylesFunctionProps = (props?: StylesProps) => StyleSheetType;
 
-export const medicamentsStyle: StylesFunctionProps = () =>
+export const medicamentStyle: StylesFunctionProps = () =>
     StyleSheet.create<StyleSheetType>({
         safeAreaViewStyle: {
             backgroundColor: ColorApp("background"),
             flex: 1,
             gap: 10,
             position: "relative",
+            paddingVertical: 50,
+            paddingHorizontal: 20,
         },
-
         ViewContainerStyle: {
-            gap: 40,
-            borderRadius: 50,
-
-            // borderBottomRightRadius: 50,
-        },
-        ViewCardStyle: {
-            display: "flex",
+            width: "100%",
+            height: "30%",
+            borderRadius: 25,
             flexDirection: "row",
-            gap: 10,
-            borderRadius: 50,
-            padding: 30,
-            shadowColor: ColorApp("shadowColor"),
+            flexWrap: "wrap",
+            gap: 20,
+            borderColor: ColorApp("text"),
+            borderWidth: 0.2,
+            backgroundColor: ColorApp("searchInputColor"),
             shadowOffset: {
                 width: 0,
-                height: 2,
+                height: 1.5,
             },
             shadowOpacity: 0.8,
-            shadowRadius: 3.46,
-
-            elevation: 9,
+            shadowRadius: 2.46,
+            shadowColor: ColorApp("shadowColor")
         },
-        ImageViewStyle: {
+        ImageCardView: {
             alignItems: "center",
             justifyContent: "center",
+            // flex:1,
         },
-        ViewInfoCardStyle: {
-            gap: 7,
+        CardInfoView: {
+            flexDirection: "column",
             flex: 1,
-            position: "relative",
-        },
-        TextDateStyle: {
-            position: "absolute",
-            top: 0,
-            right: 10,
-        },
-        TextNameStyle: {
-            fontSize: 30,
-            fontWeight: "medium",
-            // color: "grey",
-            fontStyle: "italic",
-        },
-        TextTagStyleView: {
-            flexDirection: "row",
-            gap: 5,
             flexWrap: "wrap",
+            borderRadius: 25,
+            backgroundColor: ColorApp("searchInputColor"),
         },
-        TextTagStyle: {
-            padding: 10,
-            borderRadius: 10,
-            backgroundColor: ColorApp("tabIconDefault"),
-            shadowColor: ColorApp("shadowColor"),
-            shadowOffset: {
-                width: 0,
-                height: -3,
-            },
-            shadowOpacity: 0.5,
-            shadowRadius: 1.46,
-
+        CardTtitle: {
+            width: "90%",
+            padding: 5,
+            fontStyle: "italic",
+            fontSize: 25,
         },
-        seperation: {
-            height: 50,
-            backgroundColor: ColorApp("background"),
+        CardMedicamentNameContainer: {
+            flexDirection: "row",
+            flexWrap: "wrap",
+            padding: 20,
+            gap: 10,
+            backgroundColor: ColorApp("searchInputColor"),
         },
+        CardMedicamentNameView: {
+            padding: 8,
+            borderRadius: 30,
+            borderWidth: 0.2,
+            borderColor: ColorApp("shadowColor"),
+        },
+        CardMedicamentName: {
+            fontSize: 10,
+            fontWeight: "700"
+        },
+        ExperiationDateContainer:{
+            flexDirection:'row',
+            alignItems:'center',
+            backgroundColor:'transparent'
+        }
     });
