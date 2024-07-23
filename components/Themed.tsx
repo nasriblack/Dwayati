@@ -31,7 +31,6 @@ export function useThemeColor(
 }
 
 export function Text(props: TextProps) {
-  console.log("chekcing the props in text", props);
   const { style, lightColor, darkColor, ...otherProps } = props;
   const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
   return <DefaultText style={[{ color }, style]} {...otherProps} />;

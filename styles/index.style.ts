@@ -36,7 +36,7 @@ export const styles: StylesFunctionProps = () =>
             backgroundColor: ColorApp("background"),
         },
         greeting: {
-            fontSize: 40,
+            fontSize: 30,
             fontWeight: "medium",
             color: "grey",
             fontStyle: "italic",
@@ -98,7 +98,13 @@ export const styles: StylesFunctionProps = () =>
             borderTopRightRadius:50,
             marginTop: 10,
             gap:30,
-            shadowOpacity: 0.25,
+ shadowOffset: {
+                width: 0,
+                height: 2,
+            },
+            shadowOpacity: 0.8,
+            shadowRadius: 3.46,
+                        shadowColor:ColorApp("shadowColor")
         },
         textMenu: {
             color: ColorApp("text"),

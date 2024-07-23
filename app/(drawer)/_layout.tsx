@@ -115,6 +115,8 @@ export default function Layout() {
       drawerContent={(props) => <CustomDrawerContent {...props} />}
       screenOptions={{ headerShown: false }}
     >
+      {/* <Drawer.Screen name="(tabs)" /> */}
+
       {/* <Drawer.Screen name="favourites" options={{headerShown: true}} />
         <Drawer.Screen name="settings" options={{headerShown: true}} /> */}
     </Drawer>
