@@ -74,9 +74,7 @@ export default function TabOneScreen() {
             styleContainer={{
               height: 50,
               paddingHorizontal: 20,
-              width: "80%",
-
-              marginHorizontal: screenWidth / 12,
+              width: "100%",
               position: "relative",
               top: 30,
             }}
