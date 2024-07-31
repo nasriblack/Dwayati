@@ -1,6 +1,7 @@
 import {
   Button,
   Dimensions,
+  Image,
   Pressable,
   SafeAreaView,
   StyleSheet,
@@ -50,7 +51,15 @@ export default function TabOneScreen() {
     //   path: "/doctors",
     // },
   ];
-  const screenWidth = Dimensions.get("window").width;
+
+  const logo = {
+    width: 50,
+    height: undefined,
+    borderRadius: 60,
+    borderWidth: 2,
+    borderColor: "#34c896",
+    aspectRatio: 1,
+  };
 
   return (
     <>
@@ -61,10 +70,12 @@ export default function TabOneScreen() {
           }}
         >
           <DrawerToggleButton tintColor={ColorApp("text")} />
-          <MaterialCommunityIcons
-            name="face-man-profile"
-            size={30}
-            color={ColorApp("text")}
+
+          <Image
+            width={80}
+            height={80}
+            style={logo}
+            source={require("../../../../assets/images/nasri.jpg")}
           />
         </View>
         <View style={{ ...styles().BottomSection }}>

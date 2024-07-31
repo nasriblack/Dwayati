@@ -23,12 +23,15 @@ type StylesFunctionProps = (props?: StylesProps) => StyleSheetType;
 export const prescriptionsStyle: StylesFunctionProps = () =>
     StyleSheet.create<StyleSheetType>({
         safeAreaViewStyle: {
-            backgroundColor: ColorApp("background"),
+            // backgroundColor: ColorApp("background"),
             flex: 1,
             gap: 10,
-            position: "relative",
+            // position: "relative",
             paddingVertical: 50,
             paddingHorizontal: 20,
+            marginTop:60,
+            marginHorizontal:10
+
         },
         ViewContainerStyle: {
             width: "100%",
@@ -47,6 +50,7 @@ export const prescriptionsStyle: StylesFunctionProps = () =>
             shadowOpacity: 0.8,
             shadowRadius: 2.46,
             shadowColor: ColorApp("shadowColor")
+            
         },
         ImageCardView: {
             alignItems: "center",

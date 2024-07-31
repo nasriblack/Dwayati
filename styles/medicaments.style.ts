@@ -25,12 +25,14 @@ type StylesFunctionProps = (props?: StylesProps) => StyleSheetType;
 export const medicamentStyle: StylesFunctionProps = () =>
     StyleSheet.create<StyleSheetType>({
         safeAreaViewStyle: {
-            backgroundColor: ColorApp("background"),
+            // backgroundColor: ColorApp("background"),
             flex: 1,
             gap: 10,
-            position: "relative",
+            // position: "relative",
             paddingVertical: 50,
             paddingHorizontal: 20,
+            marginTop:60,
+            marginHorizontal:15
         },
         ViewContainerStyle: {
             width: "100%",
@@ -66,7 +68,7 @@ export const medicamentStyle: StylesFunctionProps = () =>
             width: "90%",
             padding: 5,
             fontStyle: "italic",
-            fontSize: 25,
+            fontSize: 24,
         },
         CardMedicamentNameContainer: {
             flexDirection: "row",

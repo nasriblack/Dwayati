@@ -9,16 +9,19 @@ const Prescriptions = () => {
       <View style={{ ...prescriptionsStyle().ViewContainerStyle }}>
         <Image
           source={{
-            uri: "https://randomuser.me/api/portraits/women/26.jpg",
+            uri: "https://www.researchgate.net/profile/Aude-Motulsky/publication/331607809/figure/fig3/AS:734264853286913@1552073791912/Exemple-dordonnance-conforme-Tire-du-Guide-de-redaction-des-ordonnances-individuelles.png",
           }}
           width={120}
           height={120}
-          style={{ borderRadius: 15, marginTop: 15, marginLeft: 10 }}
+          style={{
+            borderRadius: 15,
+            marginTop: 15,
+            marginLeft: 10,
+            objectFit: "contain",
+          }}
         />
         <View style={{ ...prescriptionsStyle().CardInfoView }}>
-          <Text style={{ ...prescriptionsStyle().CardTtitle }}>
-            esm el mardh
-          </Text>
+          <Text style={{ ...prescriptionsStyle().CardTtitle }}>Grippe</Text>
           <View style={{ ...prescriptionsStyle().CardMedicamentNameContainer }}>
             <View style={{ ...prescriptionsStyle().CardMedicamentNameView }}>
               <Text style={{ ...prescriptionsStyle().CardMedicamentName }}>
@@ -27,7 +30,7 @@ const Prescriptions = () => {
             </View>
             <View style={{ ...prescriptionsStyle().CardMedicamentNameView }}>
               <Text style={{ ...prescriptionsStyle().CardMedicamentName }}>
-                maxillas
+                Doliprane Vitamine C
               </Text>
             </View>
           </View>

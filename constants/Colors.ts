@@ -10,6 +10,8 @@ export default {
     tabIconSelected: tintColorLight,
     searchInputColor:'#f7f7f7',
     shadowColor:'black',
+    borderAddButtonTab:'#f7f7f7'
+
   },
   dark: {
     text: '#fff',
@@ -18,7 +20,8 @@ export default {
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorDark,
     searchInputColor:'#4c4c4c',
-    shadowColor:'#34c896'
+    shadowColor:'#34c896',
+    borderAddButtonTab:'black'
   },
   custom:{
     primaryColor:'#34c896'
