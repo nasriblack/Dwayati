@@ -80,7 +80,7 @@ export default function TabOneScreen() {
         </View>
         <View style={{ ...styles().BottomSection }}>
           <Text style={{ ...styles().greeting }}>Hello,</Text>
-          <Text style={{ ...styles().userName }}>Malek Lakhal</Text>
+          <Text style={{ ...styles().userName }}>Nasri Lakhal</Text>
           <TextInputComponent
             styleContainer={{
               height: 50,

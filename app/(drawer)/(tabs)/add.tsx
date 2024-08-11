@@ -1,4 +1,4 @@
-import { Text, View } from "@/components/Themed";
+import { ColorApp, Text, View } from "@/components/Themed";
 import React, { useState } from "react";
 import {
   SafeAreaView,
@@ -7,12 +7,15 @@ import {
   Image,
   TextInput,
   Button,
+  useColorScheme,
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { useFormik } from "formik";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
+import { InputTextstyles } from "@/styles/inputTextComponent.style";
+import Colors from "@/constants/Colors";
 
 interface Medicament {
   MedicamenntName: string;
@@ -61,7 +64,7 @@ const AddScreen = () => {
     setDatePickerVisibility(false);
   };
 
-  const handleConfirm = (date) => {
+  const handleConfirm = (date: any) => {
     console.warn("A date has been picked: ", date);
     hideDatePicker();
   };
@@ -93,12 +96,7 @@ const AddScreen = () => {
           placeholder: "",
           type: "",
         },
-        // {
-        //   name: "MedicamentImg",
-        //   label: "",
-        //   placeholder: "",
-        //   type: "",
-        // },
+
         {
           name: "forWho",
           label: "lechkoun?",
@@ -113,30 +111,37 @@ const AddScreen = () => {
           name: "diseaseName",
           label: "esm el mardh",
           type: "Type2",
+          placeholder: "",
         },
         {
           name: "description",
           label: "description mtaa el mardh",
           type: "Type2",
+          placeholder: "",
         },
         {
           name: "tag",
           label: "tag ",
           type: "Type2",
+          placeholder: "",
         },
         {
           name: "Medicaments",
           label: "esm el dwayat",
           type: "Type2",
+          placeholder: "",
         },
         {
           name: "forWho",
           label: "lechkoun ?",
           type: "Type2",
+          placeholder: "",
         },
       ],
     },
   ];
+
+  const theme = useColorScheme() ?? "light";
 
   return (
     <SafeAreaView>
@@ -187,7 +192,7 @@ const AddScreen = () => {
           color="black"
         />
       </ViewRN>
-      {ButtonSelected == "Medicament" ? (
+      {ButtonSelected === "Medicament" ? (
         <ViewRN style={{ paddingHorizontal: 20, gap: 20 }}>
           {Input[0].medicament?.map((arg) => {
             const value =
@@ -198,7 +203,9 @@ const AddScreen = () => {
                 <Text>{arg.label}</Text>
                 <View
                   style={{
-                    borderColor: "#000000",
+                    borderColor:
+                      theme === "dark" ? Colors.dark.text : Colors.light.text,
+                    // borderColor: ColorApp("text"),
                     borderWidth: 1,
                     padding: 15,
                     borderRadius: 10,
@@ -208,6 +215,10 @@ const AddScreen = () => {
                   <TextInput
                     onChangeText={handleChange(`medicament.${arg.name}`)}
                     value={safeValue}
+                    style={{
+                      color:
+                        theme === "dark" ? Colors.dark.text : Colors.light.text,
+                    }}
                   />
                 </View>
               </ViewRN>
@@ -215,14 +226,18 @@ const AddScreen = () => {
           })}
         </ViewRN>
       ) : (
-        <ViewRN style={{ paddingHorizontal: 20 }}>
-          {Input[0].prescription?.map((arg) => {
+        <ViewRN style={{ paddingHorizontal: 20, gap: 20 }}>
+          {Input[1].prescription?.map((arg) => {
+            const value =
+              values.Prescription[arg.name as keyof typeof values.Prescription];
+            const safeValue = typeof value === "string" ? value : "";
             return (
               <ViewRN key={arg.name}>
                 <Text>{arg.label}</Text>
                 <View
                   style={{
-                    borderColor: "#000000",
+                    borderColor:
+                      theme === "dark" ? Colors.dark.text : Colors.light.text,
                     borderWidth: 1,
                     padding: 15,
                     borderRadius: 10,
@@ -231,8 +246,11 @@ const AddScreen = () => {
                 >
                   <TextInput
                     onChangeText={handleChange(`Prescription.${arg.name}`)}
-                    // onChangeText={handleChange("medicament.forWho")}
-                    value={values.medicament.forWho}
+                    style={{
+                      color:
+                        theme === "dark" ? Colors.dark.text : Colors.light.text,
+                    }}
+                    value={safeValue}
                   />
                 </View>
               </ViewRN>
